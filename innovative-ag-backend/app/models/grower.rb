@@ -1,3 +1,5 @@
 class Grower < User 
-    belongs_to :salesman
+    belongs_to :pca
+    has_many :messages
+
 end
