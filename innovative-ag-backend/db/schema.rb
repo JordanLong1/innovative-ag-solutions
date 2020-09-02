@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_044745) do
+ActiveRecord::Schema.define(version: 2020_09_01_044734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_044745) do
     t.integer "amount_of_acres"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "grower_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -28,6 +29,9 @@ ActiveRecord::Schema.define(version: 2020_08_31_044745) do
     t.boolean "seen"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "grower_id"
+    t.integer "pca_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +44,8 @@ ActiveRecord::Schema.define(version: 2020_08_31_044745) do
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "grower_id"
+    t.integer "pca_id"
   end
 
 end
