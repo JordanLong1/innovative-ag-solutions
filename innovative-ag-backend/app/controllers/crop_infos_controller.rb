@@ -15,9 +15,12 @@ class CropInfosController < ApplicationController
     end
     
     def create
+        grower = Grower.find_by(id: params[:id])
         crop_info = CropInfo.new(crop_info_params)
-        if crop_info
-            crop_info.save
+
+        growers_crops = grower.crop_info.build(crop_info_params)
+        if growers_crops
+            growers_crops.save
             render json: crop_info 
         else 
             render json: {error: "Something went wrong, please try again"}
@@ -46,6 +49,6 @@ class CropInfosController < ApplicationController
     private 
 
     def crop_info_params
-        params.require(:crop_info).permit(:name, :description, :amount_of_acres)
+        params.require(:crop_info).permit(:name, :description, :amount_of_acres, :grower_id)
     end
 end
