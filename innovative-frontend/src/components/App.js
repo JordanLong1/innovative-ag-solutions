@@ -2,12 +2,12 @@
 
 import React, { component } from 'react';
 import HomePage from './HomePage'
-
+// import PcaNavbar from './PCA/PcaNavbar'
 class App extends React.Component {
     render(){
         return (
             <div>
-                App component
+                {/* <PcaNavbar /> <br></br> */}
                 <HomePage />
             </div>
         )
