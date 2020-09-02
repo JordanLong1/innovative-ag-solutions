@@ -1,4 +1,4 @@
-class PcasController < UserController  
+class PcasController < UsersController  
 
     def show 
         pca = Pca.find_by(id: params[:user_id])
