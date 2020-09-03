@@ -2,6 +2,7 @@
 
 import React, { component } from 'react';
 import HomePage from './HomePage'
+import PcasContainer from './PCA/PcasContainer'
 // import PcaNavbar from './PCA/PcaNavbar'
 class App extends React.Component {
     render(){
@@ -9,6 +10,7 @@ class App extends React.Component {
             <div>
                 {/* <PcaNavbar /> <br></br> */}
                 <HomePage />
+                <PcasContainer />
             </div>
         )
     };
