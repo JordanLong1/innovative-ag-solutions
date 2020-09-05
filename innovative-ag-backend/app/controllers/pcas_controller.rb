@@ -1,15 +1,24 @@
 class PcasController < UsersController  
 
+    def index 
+        binding.pry
+        pcas = Pca.all
+        binding.pry
+        render json: pcas
+    end
+
     def show 
         pca = Pca.find_by(id: params[:user_id])
     end
 
     def new 
-        pca = Pca.new(user_params)
+        pca = Pca.new(pca_params)
     end
 
     def create 
-        pca = Pca.new(user_params) 
+        binding.pry
+        pca = Pca.new(pca_params) 
+        binding.pry
         if pca 
             pca.save 
             render json: pca
@@ -20,8 +29,8 @@ class PcasController < UsersController
 
     private 
 
-    def user_params 
-        params.require(:user).permit(:username, :first_name, :last_name, :email, :password_digest, :type, :bio)
+    def pca_params 
+        params.require(:pca).permit(:username, :first_name, :last_name, :email, :password, :type, :bio, :grower_id, :pca_id)
 
     end
 end
