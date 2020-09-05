@@ -1,11 +1,13 @@
 import React from 'react'
-
+import {handleLogin} from './actions'
+import { connect } from 'react-redux'
 class Login extends React.Component {
 
-    state = {userName: "", password: ""}
+    state = {email: "", password: ""}
 
     handleSubmit = (event) => {
-        console.log(event)
+        event.preventDefault()
+        console.log(this.props.handleLogin(this.state))
     }
 
     handleChange = (event) => {
@@ -18,8 +20,8 @@ class Login extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Username</label>
-                    <input type="text" name="userName" placeholder="Enter username" onChange={this.handleChange} value={this.state.userName}/> <br></br>
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Enter email" onChange={this.handleChange} value={this.state.email}/> <br></br>
                     <label>Password</label>
                     <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password}/><br></br>
                     <div className="ui basic button">
@@ -31,4 +33,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login
+export default connect(null, {handleLogin})(Login)
