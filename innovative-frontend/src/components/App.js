@@ -1,16 +1,25 @@
 // bread & butter i think.. 
 
-import React, { component } from 'react';
+import React from 'react';
 import HomePage from './HomePage'
-import PcasContainer from './PCA/PcasContainer'
+import SignUp from './SignUp'
+import Login from './Login'
+// import PcasContainer from './PCA/PcasContainer'
+import { BrowserRouter, Route } from 'react-router-dom'
+
 // import PcaNavbar from './PCA/PcaNavbar'
 class App extends React.Component {
     render(){
         return (
             <div>
-                {/* <PcaNavbar /> <br></br> */}
-                <HomePage />
-                <PcasContainer />
+                <BrowserRouter>
+                <Route exact path='/' component={HomePage} /> 
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={SignUp} />
+
+           
+                </BrowserRouter>
+                
             </div>
         )
     };
