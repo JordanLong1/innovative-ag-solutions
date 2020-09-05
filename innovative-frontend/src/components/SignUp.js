@@ -1,5 +1,9 @@
 import React from 'react'
 
+import {createUser} from './actions'
+import {getPcas} from './actions'
+import { connect } from 'react-redux'
+
 class SignUp extends React.Component {
 
     state = {
@@ -8,7 +12,8 @@ class SignUp extends React.Component {
         lastName: "",
         email: "", 
         password: "", 
-        type: ""
+        type: "", 
+        bio: ""
     }
 
     handleChange = (event) => {
@@ -19,26 +24,18 @@ class SignUp extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log('hello') // after this, take them to their respective homepage.. 
+        // console.log('sign up comp', this.props.createUser(this.state)) 
+        // console.log('fetch for pcas', this.props.getPcas(this.state))
     }
     render () {
 
         return (
 
-            <div className="ui container" style={{alignItems: "center"}}>
+            <div className="ui container" style={{marginTop: "150px", alignItems: "center"}}>
 
             <div className="ui form">
                 <div className="fields">
 
-                <div className="required field">
-                    <label>Type</label>
-                     <select onChange={this.handleChange} name="type" value={this.state.type}>
-                       <option value="1">PCA</option>
-                       <option value="2">Grower</option>
-                     </select>
-                   
-
-                    </div>
 
                 <div className="required field">
                 <label>Username</label>
@@ -64,6 +61,22 @@ class SignUp extends React.Component {
                   <label>Password</label>
                 <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
                     </div>
+
+                    <div className="required field">
+                <label>Bio</label>
+                 <input type="text" name="bio" onChange={this.handleChange} value={this.state.bio}/>
+                 </div>
+
+                    <div className="required field">
+                    <label>Type</label>
+                     <select onChange={this.handleChange} name="type" value={this.state.type}>
+                       <option ></option>
+                       <option name="Pca" value="Pca">PCA</option>
+                       <option  name="Grower" value="Grower">Grower</option>
+                     </select>
+                   
+
+                    </div>
                     
                     <div className="ui basic button">
                         <label>Submit</label>
@@ -79,4 +92,4 @@ class SignUp extends React.Component {
 }
 
 
-export default SignUp
+export default connect(null, {createUser, getPcas} )(SignUp)
