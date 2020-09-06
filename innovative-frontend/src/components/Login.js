@@ -5,17 +5,25 @@ class Login extends React.Component {
 
     state = {email: "", password: ""}
 
+    
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.props.handleLogin(this.state))
-    }
 
+       this.props.handleLogin(this.state, () => {
+           this.props.history.push('/profilehome')
+       })
+     
+        this.setState({
+            email: "", 
+            password: ""
+        })
+       }
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-
+    
     render() {
         return (
             <div>
