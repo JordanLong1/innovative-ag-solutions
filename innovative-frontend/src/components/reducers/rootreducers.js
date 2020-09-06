@@ -1,9 +1,6 @@
 import {combineReducers} from 'redux'
-import pcaReducer from './pcaReducer'
-export const rootreducers = () => {
-    combineReducers({
-        pcaReducer: pcaReducer
+import userReducer from './userReducer'
+export default combineReducers({
+        userReducers: userReducer
     })
-}
 
-export default rootreducers
