@@ -4,10 +4,9 @@ import React from 'react';
 import HomePage from './HomePage'
 import SignUp from './SignUp'
 import Login from './Login'
-// import PcasContainer from './PCA/PcasContainer'
+import ProfileHome from './ProfileHome'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-// import PcaNavbar from './PCA/PcaNavbar'
 class App extends React.Component {
     render(){
         return (
@@ -16,7 +15,7 @@ class App extends React.Component {
                 <Route exact path='/' component={HomePage} /> 
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/signup' component={SignUp} />
-
+                <Route exact path='/profilehome' component={ProfileHome} />
            
                 </BrowserRouter>
                 
