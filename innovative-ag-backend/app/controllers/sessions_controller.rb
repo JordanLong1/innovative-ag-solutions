@@ -1,12 +1,9 @@
 class SessionsController < ApplicationController 
     
     def create 
-        binding.pry
         user = User.find_by(email: params[:user][:email])
-        binding.pry
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id 
-            binding.pry
             resp = {
                 user: user.user_serializer
             }
