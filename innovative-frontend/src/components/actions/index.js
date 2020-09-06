@@ -52,7 +52,7 @@ export const getCurrentUser = userInfo => {
     }
 }   
 
-export const handleLogin = userInfo => {
+export const handleLogin = (userInfo, callback) => {
     return(dispatch) => {
         return fetch('http://localhost:3000/sessions', {
             method: "POST", 
@@ -69,6 +69,13 @@ export const handleLogin = userInfo => {
             })
         })
         .then(resp => resp.json())
-        .then(r => console.log(r))
+        .then(resp => {
+            if (!resp.error) {
+                dispatch({ type: 'LOGIN_USER', user: resp})
+                callback()
+            } else {
+                alert('There was an error logging in, please try again')
+            }
+        })
     }
 }
