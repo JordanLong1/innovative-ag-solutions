@@ -40,7 +40,7 @@ export const getPcas = (pca) => { // need to fetch here to put all salesmen into
     }
 }
 
-export const getCurrentUser = userInfo => {
+export const getCurrentUser = userInfo => { // add conditional for errors
     return(dispatch) => {
         return fetch('http://localhost:3000/get_current_user', {
             credentials: "include", 
@@ -82,6 +82,23 @@ export const handleLogin = (userInfo, callback) => {
             } else {
                 alert('There was an error logging in, please try again')
             }
+        })
+    }
+}
+
+export const logOutUser = id => {
+    return dispatch => {
+        return fetch(`http://localhost:3000/sessions/${id}`, {
+            method: "DELETE", 
+            credentials: "include", 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            console.log('this is the resp', resp)
+            dispatch({ type: 'LOGOUT_USER', payload: resp })
         })
     }
 }

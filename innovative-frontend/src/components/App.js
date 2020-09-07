@@ -1,4 +1,3 @@
-// bread & butter i think.. 
 
 import React from 'react';
 import HomePage from './HomePage'
@@ -7,12 +6,17 @@ import Login from './Login'
 import ProfileHome from './ProfileHome'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {getCurrentUser} from './actions'
+import {getCurrentUser, logOutUser} from './actions'
 class App extends React.Component {
 
     componentDidMount() {
         this.props.getCurrentUser()
     }
+
+    conditionallyRenderNavigation() {
+        console.log(this.props.logOutUser())
+    }
+
     render(){
         return (
             <div>
@@ -27,6 +31,13 @@ class App extends React.Component {
             </div>
         )
     };
-};
 
-export default connect(null, {getCurrentUser})(App);
+};
+        // const mapStateToProps = state => {
+        //     console.log(state)
+        //     return {state}
+           
+        // }
+        export default connect(null, {getCurrentUser, logOutUser})(App);
+
+// export default connect(mapStateToProps, {getCurrentUser})(App);
