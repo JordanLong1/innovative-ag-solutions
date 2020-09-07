@@ -16,7 +16,6 @@ class UsersController < ApplicationController
         user = User.new(user_params)
          if user 
             user.save!
-            session[:user_id] = user.id 
             render json: user 
          else 
             render json: {error: "There is some incorrect info regarding your user information, please try again"}
