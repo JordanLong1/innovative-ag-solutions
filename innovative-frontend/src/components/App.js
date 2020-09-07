@@ -6,8 +6,13 @@ import SignUp from './SignUp'
 import Login from './Login'
 import ProfileHome from './ProfileHome'
 import { BrowserRouter, Route } from 'react-router-dom'
-
+import { connect } from 'react-redux'
+import {getCurrentUser} from './actions'
 class App extends React.Component {
+
+    componentDidMount() {
+        this.props.getCurrentUser()
+    }
     render(){
         return (
             <div>
@@ -24,4 +29,4 @@ class App extends React.Component {
     };
 };
 
-export default App;
+export default connect(null, {getCurrentUser})(App);
