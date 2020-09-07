@@ -10,11 +10,4 @@ class ApplicationController < ActionController::API
     end
 
 
-    def get_current_user 
-        if logged_in? 
-            render json: {user: current_user.user_serializer}
-        else 
-            render json: {error: "There is no current user"}
-        end
-    end
 end
