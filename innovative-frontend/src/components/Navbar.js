@@ -1,6 +1,15 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {logOutUser} from './actions'
 
 class Navbar extends React.Component {
+
+
+  handleClick = () => {
+    this.props.logOutUser()
+  }
+
     render () {
         return (
             <div className="ui menu">
@@ -18,7 +27,7 @@ class Navbar extends React.Component {
             </a>
             <div className="right menu">
               <div className="header item"> 
-                Logout
+                <Link onClick={this.handleClick} to='/' className='item'>Logout</Link>
               </div>
             </div>
           </div>
@@ -26,4 +35,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default connect(null, {logOutUser})(Navbar);
