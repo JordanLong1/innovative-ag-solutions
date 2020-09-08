@@ -1,9 +1,7 @@
 class PcasController < UsersController  
 
     def index 
-        binding.pry
         pcas = Pca.all
-        binding.pry
         render json: pcas
     end
 
@@ -16,9 +14,7 @@ class PcasController < UsersController
     end
 
     def create 
-        binding.pry
         pca = Pca.new(pca_params) 
-        binding.pry
         if pca 
             pca.save 
             render json: pca
