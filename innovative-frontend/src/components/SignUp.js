@@ -3,6 +3,7 @@ import React from 'react'
 import {createUser} from './actions'
 import {getPcas} from './actions'
 import { connect } from 'react-redux'
+// import pcasReducer from './reducers/pcasReducer'
 
 class SignUp extends React.Component {
 
@@ -13,7 +14,8 @@ class SignUp extends React.Component {
         email: "", 
         password: "", 
         type: "", 
-        bio: ""
+        bio: "", 
+        pcaId: 0
     }
 
     handleChange = (event) => {
@@ -24,8 +26,26 @@ class SignUp extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // console.log('sign up comp', this.props.createUser(this.state)) 
-        // console.log('fetch for pcas', this.props.getPcas(this.state))
+        this.props.createUser(this.state, () => {
+            this.props.history.push('/profilehome')
+        })
+
+        this.setState({
+            userName: "", 
+            firstName: "", 
+            lastName: "",
+            email: "", 
+            password: "", 
+            type: "", 
+            bio: "", 
+            pcaId: 0
+        })
+    }
+
+    componentDidMount() {
+        // console.log(this.props)
+     this.props.getPcas()
+     
     }
     render () {
 
@@ -74,8 +94,17 @@ class SignUp extends React.Component {
                        <option name="Pca" value="Pca">PCA</option>
                        <option  name="Grower" value="Grower">Grower</option>
                      </select>
-                   
+                    </div>
 
+                    <div className='required field'>
+                <label>Growers PCA</label>
+                <select onChange={this.handleChange} name="pcaId" value={this.state.pcaId} >
+                    <option></option>
+                {this.props.pcaList.map(eachPca => {
+                   return eachPca.map(pca => <option name='pcaId' value={pca.id} key={pca.id}>{pca.username}</option>)
+                })}
+                   
+                </select>
                     </div>
                     
                     <div className="ui basic button">
@@ -91,5 +120,12 @@ class SignUp extends React.Component {
     }
 }
 
+const mapStateToprops = state => {
+//    console.log(state.pcaReducer)
+    return {pcaList: state.pcaReducer}
+}
 
-export default connect(null, {createUser, getPcas} )(SignUp)
+
+
+
+export default connect(mapStateToprops, {createUser, getPcas} )(SignUp)
