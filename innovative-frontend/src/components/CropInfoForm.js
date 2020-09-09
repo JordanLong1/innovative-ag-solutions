@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
+import { createCropInfo } from './actions'
 class CropInfoForm extends React.Component {
 
     state = { 
@@ -16,6 +17,9 @@ class CropInfoForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        // this.props.createCropInfo(this.state, () => {
+        //     this.props.history.push('')
+        // })
     }
 
     render() {
@@ -33,3 +37,5 @@ class CropInfoForm extends React.Component {
         )
     }
 }
+
+export default connect(null, {createCropInfo})(CropInfoForm)
