@@ -113,4 +113,18 @@ export const logOutUser = id => {
     }
 }
 
+export const createCropInfo = (newCrop, callback) => {
+    return(dispatch) => {
+        return fetch('http://localhost:3000/crops_info', {
+            method: "POST", 
+            credentials: 'include', 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(resp => console.log(resp))
+    }
+}
+
 
