@@ -56,8 +56,7 @@ export const getCurrentUser = userInfo => { // add conditional for errors
             credentials: "include", 
             headers: {
                 'Content-Type': 'application/json'
-            }
-            
+            }    
         })
         .then(resp => resp.json()) 
         .then(resp => {
@@ -113,3 +112,5 @@ export const logOutUser = id => {
         })
     }
 }
+
+
