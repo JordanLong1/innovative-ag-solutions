@@ -114,19 +114,23 @@ export const logOutUser = id => {
 }
 
 export const createCropInfo = (newCrop, callback) => {
+    console.log(newCrop)
     return(dispatch) => {
-        return fetch('http://localhost:3000/crops_info', {
+        return fetch('http://localhost:3000/crop_infos', {
             method: "POST", 
             credentials: 'include', 
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }, 
             body: JSON.stringify({
-                id: newCrop.id, 
-                name: newCrop.name, 
-                description: newCrop.description, 
-                amount_of_acres: newCrop.amountOfAcres, 
-                grower_id: newCrop.growerId
+             
+                    // id: newCrop.id, 
+                    name: newCrop.name, 
+                    description: newCrop.description, 
+                    amount_of_acres: newCrop.amountOfAcres, 
+                    grower_id: newCrop.growerId
+
+                
             })
         })
         .then(resp => resp.json())
