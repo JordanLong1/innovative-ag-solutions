@@ -30,11 +30,6 @@ class App extends React.Component {
     };
 
 };
-        // const mapStateToProps = state => {
-        //     console.log(state)
-        //     return {state}
-           
-        // }
+     
         export default connect(null, {getCurrentUser})(App);
 
-// export default connect(mapStateToProps, {getCurrentUser})(App);
