@@ -5,17 +5,13 @@ import {logOutUser} from './actions'
 
 class Navbar extends React.Component {
 
-  
 
-  handleClick = () => {
-    this.props.logOutUser()
-  }
 
    conditionallyRenderUserInfo = () => {
       if (this.props.user.type === "Grower") {
         return <div className="ui menu">
    
-          <Link to='/addcrops' className='item'>Add Crops</Link>
+          <Link to='/addcrops' className='item' >Add Crops</Link>
          
           <Link to='/mycrops' className='item'>My Crops</Link>
      
