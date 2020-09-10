@@ -120,7 +120,14 @@ export const createCropInfo = (newCrop, callback) => {
             credentials: 'include', 
             headers: {
                 'Content-Type': 'application/json'
-            }
+            }, 
+            body: JSON.stringify({
+                id: newCrop.id, 
+                name: newCrop.name, 
+                description: newCrop.description, 
+                amount_of_acres: newCrop.amountOfAcres, 
+                grower_id: newCrop.growerId
+            })
         })
         .then(resp => resp.json())
         .then(resp => console.log(resp))
