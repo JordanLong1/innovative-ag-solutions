@@ -6,10 +6,12 @@ class CropInfoForm extends React.Component {
     state = { 
         name: "", 
         description: "", 
-        amountOfAcres: 0
+        amountOfAcres: 0, 
+        growerId: 0
     }
 
     handleChange = (event) => {
+     
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -20,6 +22,12 @@ class CropInfoForm extends React.Component {
         // this.props.createCropInfo(this.state, () => {
         //     this.props.history.push('')
         // })
+        this.setState({
+            ...this.state, 
+            growerId: this.props.user.id})
+        // console.log({...this.state, growerId: this.props.user.id})
+        console.log(this.state)
+       this.props.createCropInfo({...this.state, growerId: this.props.user.id})
     }
 
     render() {
@@ -28,9 +36,9 @@ class CropInfoForm extends React.Component {
                 <h1>Please add information pertaining to your crops below</h1>
 
                 <form onSubmit={this.handleSubmit} >
-                    <input type='text' name='name' placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/>
-                    <textarea name='descriptiom' placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/>
-                    <input type='text' name='amountOfAcres' placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} />
+                    <input type='text' name="name" placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/> 
+                    <textarea type='text' name="description" placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/> 
+                    <input type='text' name="amountOfAcres" placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} /> 
                     <button>Submit</button>
                 </form>
             </div>
@@ -38,4 +46,9 @@ class CropInfoForm extends React.Component {
     }
 }
 
-export default connect(null, {createCropInfo})(CropInfoForm)
+const mapStateToProps = state => {
+  
+    return {user: state.userReducers.user}
+}
+
+export default connect(mapStateToProps, {createCropInfo})(CropInfoForm)
