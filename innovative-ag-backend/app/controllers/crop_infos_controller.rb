@@ -15,11 +15,14 @@ class CropInfosController < ApplicationController
     end
     
     def create
-        grower = Grower.find_by(id: params[:id])
+        binding.pry
+        grower = Grower.find_by(id: params[:grower_id])
+        binding.pry
         crop_info = CropInfo.new(crop_info_params)
-
-        growers_crops = grower.crop_info.build(crop_info_params)
+        binding.pry
+        growers_crops = grower.crop_infos.build(crop_info_params)
         if growers_crops
+            binding.pry
             growers_crops.save
             render json: crop_info 
         else 
