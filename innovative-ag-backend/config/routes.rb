@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/get_current_user', to: 'sessions#get_current_user'
   resources :users, only: [:create, :show, :destroy]
   resources :messages, only: [:create, :show, :index]
-  resources :crops_info, only: [:create, :show, :index, :edit, :update]
+  resources :crop_infos, only: [:create, :show, :index, :edit, :update]
   resources :pcas, only: [:create, :show, :destroy, :index]
   resources :growers, only: [:create, :show, :destroy]
 end
