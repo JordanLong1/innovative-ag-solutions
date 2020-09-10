@@ -16,18 +16,12 @@ class Navbar extends React.Component {
         return <div className="ui menu">
    
           <Link to='/addcrops' className='item'>Add Crops</Link>
-      
-
-    
          
           <Link to='/mycrops' className='item'>My Crops</Link>
      
-         
-    
           <Link to='/messages' className='item'>Messages</Link>
-         
-    
-          <Link onClick={this.handleClick} to='/' className='item'>Logout</Link>
+
+          <Link onClick={() => this.props.logOutUser()} to='/' className='item'>Logout</Link>
          </div>
       } else {
         return <div className="ui menu">
