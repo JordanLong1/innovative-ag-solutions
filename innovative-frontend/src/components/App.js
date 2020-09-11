@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {getCurrentUser} from './actions'
 import CropInfoForm from './CropInfoForm';
+import displayCrops from './displayCrops';
 class App extends React.Component {
 
     componentDidMount() {
@@ -24,6 +25,7 @@ class App extends React.Component {
                 <Route exact path='/signup' component={SignUp} />
                 <Route exact path='/profilehome' component={ProfileHome} />
                 <Route exact path='/addcrops' component={CropInfoForm} />
+                <Route exact path='/mycrops' component={displayCrops} />
                 </BrowserRouter>
                 
             </div>
