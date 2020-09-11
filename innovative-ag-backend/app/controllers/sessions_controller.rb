@@ -4,10 +4,8 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:user][:email])
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id 
-            resp = {
-                user: user.user_serializer
-            }
-            render json: user 
+           
+            render json: user.user_serializer
         else 
            resp = {
                error: "Error test change later"
@@ -25,9 +23,9 @@ class SessionsController < ApplicationController
 
     end
 
-    def get_current_user 
+     def get_current_user 
         if logged_in? 
-            render json: {user: current_user.user_serializer}
+            render json: current_user.user_serializer
         else 
             render json: {error: "There is no current user"}
         end
