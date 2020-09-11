@@ -25,9 +25,15 @@ class CropInfoForm extends React.Component {
         this.setState({
             ...this.state, 
             growerId: this.props.user.id})
-        // console.log({...this.state, growerId: this.props.user.id})
-        console.log(this.state)
-       this.props.createCropInfo({...this.state, growerId: this.props.user.id})
+       this.props.createCropInfo({...this.state, growerId: this.props.user.id}, () => {
+           this.props.history.push('/mycrops')
+       })
+
+       this.setState({
+        name: "", 
+        description: "", 
+        amountOfAcres: 0
+       })
     }
 
     render() {
