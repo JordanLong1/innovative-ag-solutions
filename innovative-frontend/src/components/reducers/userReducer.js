@@ -1,10 +1,9 @@
 export default ( state = {}, action) => {
-
     switch(action.type) {
         case 'LOGIN_USER':
-            return {...state, user: action.user}
+        return action.user
             case 'CURRENT_USER': 
-            return {...state, user: action.payload.user}
+            return action.user
            
             case 'LOGOUT_USER':
                
