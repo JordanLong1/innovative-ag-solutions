@@ -50,7 +50,7 @@ export const getPcas = () => { // need to fetch here to put all salesmen into a 
     }
 }
 
-export const getCurrentUser = userInfo => { // add conditional for errors
+export const getCurrentUser = () => { // add conditional for errors
     return(dispatch) => {
         return fetch('http://localhost:3000/get_current_user', {
             credentials: "include", 
@@ -61,7 +61,7 @@ export const getCurrentUser = userInfo => { // add conditional for errors
         .then(resp => resp.json()) 
         .then(resp => {
             if(!resp.error) {
-                dispatch({type: 'CURRENT_USER', payload: resp})
+                dispatch({type: 'CURRENT_USER', user: resp})
             } else {
                 alert(resp.error)
             }
@@ -137,5 +137,12 @@ export const createCropInfo = (newCrop, callback) => {
         
     }
 }
+
+// export const showCropInfo = (id, callback) => {
+//     return(dispatch) => {
+//         dispatch({ type: 'SHOW_CROP'})
+    
+//     }
+// }
 
 
