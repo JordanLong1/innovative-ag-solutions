@@ -8,7 +8,7 @@ class Navbar extends React.Component {
 
 
    conditionallyRenderUserInfo = () => {
-      if (this.props.user.type === "Grower") {
+      if (this.props.user && this.props.user.type === "Grower") {
         return <div className="ui menu">
    
           <Link to='/addcrops' className='item' >Add Crops</Link>
@@ -51,7 +51,7 @@ class Navbar extends React.Component {
 
 const mapStateToProps = state => {
   // console.log(state.userReducers.user)
-  return {user: state.userReducers.user}
+  return {user: state.userReducers}
 }
 
 export default connect(mapStateToProps, {logOutUser})(Navbar);
