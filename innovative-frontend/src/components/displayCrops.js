@@ -1,11 +1,16 @@
 import React from 'react' 
 import { connect } from 'react-redux'
 // import {createCropInfo} from './actions'
- const displayCrops = () => {
+ const displayCrops = (props) => {
     return (
         <div>
-            Crops go here
-            
+            <div>
+                <h1>Your Crops</h1>
+                    <p>Name of crop - {props.crop.name}</p>
+                    <p>Description of crop - {props.crop.description}</p>
+                    <p>Acres - {props.crop.amount_of_acres}</p>
+            </div>
+           
         </div>
     )
 }
