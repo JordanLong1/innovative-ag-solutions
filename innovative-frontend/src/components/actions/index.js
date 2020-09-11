@@ -122,19 +122,20 @@ export const createCropInfo = (newCrop, callback) => {
             headers: {
                 'Content-Type': 'application/json',
             }, 
-            body: JSON.stringify({
-             
-                    // id: newCrop.id, 
+            body: JSON.stringify({ 
+                    id: newCrop.id,
                     name: newCrop.name, 
                     description: newCrop.description, 
                     amount_of_acres: newCrop.amountOfAcres, 
-                    grower_id: newCrop.growerId
-
-                
+                    grower_id: newCrop.growerId    
             })
         })
         .then(resp => resp.json())
-        .then(resp => console.log(resp))
+        .then(resp => {
+            dispatch({ type: 'ADD_CROP', crop: resp})
+            callback()
+        })
+        
     }
 }
 
