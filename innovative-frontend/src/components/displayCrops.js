@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 // import {createCropInfo} from './actions'
  const displayCrops = (props) => {
+     console.log(props)
     return (
         <div>
             <div>
@@ -16,8 +17,10 @@ import { connect } from 'react-redux'
 }
 
 const mapStateToProps = state => {
-   
-    return {crop: state.cropsReducer.crop}
+   console.log(state)
+   // filter by the current user id (grower id)
+    return {crop: state.cropsReducer.crop} //.filter(crop => crop.grower_id === user.id) || state.userReducer.id
+ 
 }
 
 export default connect(mapStateToProps)(displayCrops)
