@@ -19,9 +19,7 @@ class CropInfoForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // this.props.createCropInfo(this.state, () => {
-        //     this.props.history.push('')
-        // })
+      
         this.setState({
             ...this.state, 
             growerId: this.props.user.id})
@@ -54,7 +52,7 @@ class CropInfoForm extends React.Component {
 
 const mapStateToProps = state => {
   
-    return {user: state.userReducers.user}
+    return {user: state.userReducers}
 }
 
 export default connect(mapStateToProps, {createCropInfo})(CropInfoForm)
