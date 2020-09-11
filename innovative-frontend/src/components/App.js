@@ -9,6 +9,8 @@ import { connect } from 'react-redux'
 import {getCurrentUser} from './actions'
 import CropInfoForm from './CropInfoForm';
 import displayCrops from './displayCrops';
+
+
 class App extends React.Component {
 
     componentDidMount() {
