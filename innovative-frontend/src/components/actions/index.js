@@ -114,7 +114,6 @@ export const logOutUser = id => {
 }
 
 export const createCropInfo = (newCrop, callback) => {
-    console.log(newCrop)
     return(dispatch) => {
         return fetch('http://localhost:3000/crop_infos', {
             method: "POST", 
