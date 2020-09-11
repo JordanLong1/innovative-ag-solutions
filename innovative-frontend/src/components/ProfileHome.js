@@ -20,6 +20,7 @@ class ProfileHome extends React.Component {
                      <li>Email: {this.props.user.email}</li>
                      <li>Bio: {this.props.user.bio}</li>
                     <li>User type: {this.props.user.type}</li>
+                    
                 </ul>
                 </div>
 
@@ -32,7 +33,7 @@ class ProfileHome extends React.Component {
 
 const mapStateToProps = state => {
    
-    return {user: state.userReducers.user}
+    return {user: state.userReducers}
 }
 
 export default connect(mapStateToProps)(ProfileHome)
