@@ -1,5 +1,6 @@
 import React from 'react' 
 import { connect } from 'react-redux'
+import { getAllCrops } from './actions'
 // import {createCropInfo} from './actions'
  const displayCrops = (props) => {
      console.log(props)
@@ -17,10 +18,10 @@ import { connect } from 'react-redux'
 }
 
 const mapStateToProps = state => {
-   console.log(state)
+   console.log(state.cropsReducer)
    // filter by the current user id (grower id)
     return {crop: state.cropsReducer.crop} //.filter(crop => crop.grower_id === user.id) || state.userReducer.id
  
 }
 
-export default connect(mapStateToProps)(displayCrops)
+export default connect(mapStateToProps, {getAllCrops})(displayCrops)
