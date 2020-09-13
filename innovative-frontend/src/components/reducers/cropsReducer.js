@@ -1,8 +1,8 @@
-export default (state = {}, action) => {
+export default (state = [], action) => {
     switch(action.type) {
         case 'ADD_CROP':
            
-            return {...state, crop: action.crop}
+            return [...state, action.crop]
             default:
                 return state
     }
