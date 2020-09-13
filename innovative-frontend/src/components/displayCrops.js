@@ -1,6 +1,5 @@
 import React from 'react' 
 import { connect } from 'react-redux'
-import { getAllCrops } from './actions'
 // import {createCropInfo} from './actions'
  const displayCrops = (props) => {
      console.log(props)
@@ -24,4 +23,4 @@ const mapStateToProps = state => {
  
 }
 
-export default connect(mapStateToProps, {getAllCrops})(displayCrops)
+export default connect(mapStateToProps)(displayCrops)
