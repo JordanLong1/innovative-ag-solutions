@@ -148,7 +148,9 @@ export const getAllCrops = () => {
                 }
         })
         .then(resp => resp.json())
-        .then(resp => console.log(resp))
+        .then(resp => {
+            dispatch({ type: 'GET_CROPS', crops: resp})
+        })
     }
 }
 
