@@ -6,7 +6,7 @@ import Login from './Login'
 import ProfileHome from './ProfileHome'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {getCurrentUser} from './actions'
+import {getCurrentUser, getAllCrops} from './actions'
 import CropInfoForm from './CropInfoForm';
 import displayCrops from './displayCrops';
 
@@ -15,6 +15,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.props.getCurrentUser()
+        console.log(this.props.getAllCrops())
     }
 
 
@@ -36,5 +37,5 @@ class App extends React.Component {
 
 };
      
-        export default connect(null, {getCurrentUser})(App);
+        export default connect(null, {getCurrentUser, getAllCrops })(App);
 
