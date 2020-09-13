@@ -40,8 +40,11 @@ class CropInfoForm extends React.Component {
                 <h1>Please add information pertaining to your crops below</h1>
 
                 <form onSubmit={this.handleSubmit} >
+                    <label>Name of crop:</label>
                     <input type='text' name="name" placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/> 
+                    <label>Brief Description:</label>
                     <textarea type='text' name="description" placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/> 
+                    <label>Acres</label>
                     <input type='text' name="amountOfAcres" placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} /> 
                     <button>Submit</button>
                 </form>
