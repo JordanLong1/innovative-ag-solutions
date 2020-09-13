@@ -138,6 +138,20 @@ export const createCropInfo = (newCrop, callback) => {
     }
 }
 
+// fetch the index action of crops
+export const getAllCrops = () => {
+    return (dispatch) => {
+        return fetch('http://localhost:3000/crop_infos', {
+            credentials: 'include', 
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+        })
+        .then(resp => resp.json())
+        .then(resp => console.log(resp))
+    }
+}
+
 // export const showCropInfo = (id, callback) => {
 //     return(dispatch) => {
 //         dispatch({ type: 'SHOW_CROP'})
