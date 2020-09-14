@@ -21,7 +21,7 @@ class Navbar extends React.Component {
          </div>
       } else {
         return <div className="ui menu">
-        <Link to='/growerscrops' className='item'>Crops Attended to</Link>
+        <Link to='/cropsattendedto' className='item'>Crops Attended to</Link>
         
         <Link to='/messages' className='item'>Messages</Link>
         
