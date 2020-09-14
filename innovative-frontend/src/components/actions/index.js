@@ -154,11 +154,17 @@ export const getAllCrops = () => {
     }
 }
 
-// export const showCropInfo = (id, callback) => {
-//     return(dispatch) => {
-//         dispatch({ type: 'SHOW_CROP'})
-    
-//     }
-// }
+export const getPcaToAccessGrowersCrops = (id) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/pcas/${id}`, {
+            credentials: 'include', 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(resp => console.log(resp))
+    }
+}
 
 
