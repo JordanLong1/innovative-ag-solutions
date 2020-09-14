@@ -51,44 +51,49 @@ class SignUp extends React.Component {
 
         return (
 
-            <div className="ui container" style={{marginTop: "150px", alignItems: "center"}}>
+            <div>
+                    <div className="ui segment">
+            <h1 className="ui center aligned header">Welcome to Innovative Ag Solutions!</h1>
+            </div>
+
+            <div className="ui container" style={{marginTop: "150px"}}>
 
             <div className="ui form">
-                <div className="fields">
+                <div className="field">
 
 
                 <div className="required field">
-                <label>Username</label>
+                <label className='ui pointing label'>Username</label>
                  <input type="text" name="userName" onChange={this.handleChange} value={this.state.userName}/>
-                 </div>
+                 </div> 
           
              <div className="field">
-                  <label>First name</label>
+                  <label className='ui pointing label'>First name</label>
                   <input type="text" name="firstName" onChange={this.handleChange} value={this.state.firstName}/>
                      </div>
                      
              <div className="field">
-                  <label>Last name</label>
+                  <label className='ui pointing label'>Last name</label>
                 <input type="text" name="lastName" onChange={this.handleChange} value={this.state.lastName}/>
                     </div>
 
                     <div className="required field">
-                  <label>Email</label>
+                  <label className='ui pointing label'>Email</label>
                 <input type="text" name="email" placeholder="example@example.com" onChange={this.handleChange} value={this.state.email}/>
                     </div>
                     
                     <div className="required field">
-                  <label>Password</label>
+                  <label className='ui pointing label'>Password</label>
                 <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
                     </div>
 
                     <div className="required field">
-                <label>Bio</label>
+                <label className='ui pointing label'>Bio</label>
                  <input type="text" name="bio" onChange={this.handleChange} value={this.state.bio}/>
                  </div>
 
                     <div className="required field">
-                    <label>Type</label>
+                    <label className='ui pointing label'>Type</label>
                      <select onChange={this.handleChange} name="type" value={this.state.type}>
                        <option ></option>
                        <option name="Pca" value="Pca">PCA</option>
@@ -97,7 +102,7 @@ class SignUp extends React.Component {
                     </div>
 
                     <div className='required field'>
-                <label>Growers PCA</label>
+                <label className='ui pointing label'>Growers PCA</label>
                 <select onChange={this.handleChange} name="pcaId" value={this.state.pcaId} >
                     <option></option>
                 {this.props.pcaList.map(eachPca => {
@@ -105,14 +110,15 @@ class SignUp extends React.Component {
                 })}
                    
                 </select>
-                    </div>
+                    </div> 
                     
                     <div className="ui basic button">
-                        <label>Submit</label>
-                        <button onClick={this.handleSubmit}>Submit</button>
+                        
+                        <button onClick={this.handleSubmit} style={{width: '1100px', height: '30px'}} >Sign me up!</button>
                     </div>
                 </div>
 
+            </div>
             </div>
             </div>
        
