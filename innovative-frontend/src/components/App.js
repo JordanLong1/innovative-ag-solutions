@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import {getCurrentUser, getAllCrops} from './actions'
 import CropInfoForm from './CropInfoForm';
 import displayCrops from './displayCrops';
+import pcasGrowerInfo from './pcasGrowerInfo';
 
 
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
                 <Route exact path='/profilehome' component={ProfileHome} />
                 <Route exact path='/addcrops' component={CropInfoForm} />
                 <Route exact path='/mycrops' component={displayCrops} />
+                <Route exact path='/cropsattendedto' component={pcasGrowerInfo} />
                 </BrowserRouter>
                 
             </div>
