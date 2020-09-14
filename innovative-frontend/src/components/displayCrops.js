@@ -1,5 +1,6 @@
 import React from 'react' 
 import { connect } from 'react-redux'
+import Navbar from './Navbar'
 
  const displayCrops = (props) => {
     const cropList = props.crops.map(crop => {
@@ -14,6 +15,7 @@ import { connect } from 'react-redux'
     return (
         
             <div>
+                <Navbar />
                 <h1>Your Crops</h1>
                     <ul>
                     {cropList}
