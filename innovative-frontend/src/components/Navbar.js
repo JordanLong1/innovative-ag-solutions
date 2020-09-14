@@ -11,11 +11,12 @@ class Navbar extends React.Component {
       if (this.props.user && this.props.user.type === "Grower") {
         return <div className="ui menu">
    
+          <Link to='/profilehome' className='item'>Home</Link>
+          
           <Link to='/addcrops' className='item' >Add Crops</Link>
          
           <Link to='/mycrops' className='item'>My Crops</Link>
      
-          <Link to='/messages' className='item'>Messages</Link>
 
           <Link onClick={() => this.props.logOutUser()} to='/' className='item'>Logout</Link>
          </div>
@@ -23,7 +24,7 @@ class Navbar extends React.Component {
         return <div className="ui menu">
         <Link to='/cropsattendedto' className='item'>Crops Attended to</Link>
         
-        <Link to='/messages' className='item'>Messages</Link>
+        <Link to='/profilehome' className='item'>Home</Link>
         
         <Link onClick={this.handleClick} to='/' className='item'>Logout</Link>
         
