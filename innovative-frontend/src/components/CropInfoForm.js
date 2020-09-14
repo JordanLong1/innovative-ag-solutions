@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createCropInfo } from './actions'
+import Navbar from './Navbar'
 class CropInfoForm extends React.Component {
 
     state = { 
@@ -36,18 +37,27 @@ class CropInfoForm extends React.Component {
 
     render() {
         return (
-            <div>
+                <div>
+                    <Navbar /> 
+            <div className='ui container' style={{ marginTop: '100px', textAlign: 'center'}}>
                 <h1>Please add information pertaining to your crops below</h1>
 
                 <form onSubmit={this.handleSubmit} >
-                    <label>Name of crop:</label>
-                    <input type='text' name="name" placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/> 
-                    <label>Brief Description:</label>
-                    <textarea type='text' name="description" placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/> 
-                    <label>Acres</label>
-                    <input type='text' name="amountOfAcres" placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} /> 
-                    <button>Submit</button>
+                    <div className='ui input focus'>
+                    <label className='ui pointing label'>Name of crop:</label>
+                    <input style={{ width: '500px'}} type='text' name="name" placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/> 
+                    </div> <br></br><br></br>
+                    <div className='ui input focus'>
+                    <label className='ui pointing label'>Brief Description:</label>
+                    <textarea style={{ width: '600px'}} type='text' name="description" placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/> 
+                    </div> <br></br><br></br>
+                    <div className='ui input focus'>
+                    <label className='ui pointing label'>Acres</label>
+                    <input style={{ width: '600px'}} type='text' name="amountOfAcres" placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} /> 
+                    </div> <br></br><br></br>
+                    <button style={{width: '650px'}} className='ui large button'>Submit</button>
                 </form>
+            </div>
             </div>
         )
     }
