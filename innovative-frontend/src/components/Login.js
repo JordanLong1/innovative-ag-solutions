@@ -26,16 +26,22 @@ class Login extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className='ui container' style={{width: '500px', marginTop: '150px'}}>
                 <h1>Log-In below</h1>
                 <form onSubmit={this.handleSubmit}>
+                    <div className='ui input'>
                     <label>Email</label>
-                    <input type="text" name="email" placeholder="Enter email" onChange={this.handleChange} value={this.state.email}/> <br></br>
+                    <input style={{width: '300px'}} type="text" name="email" placeholder="Enter email" onChange={this.handleChange} value={this.state.email}/> <br></br>
+                    </div> <br></br>
+                    <div className='ui input'>
+
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password}/><br></br>
-                    <div className="ui basic button">
-                    <button type="submit" >Submit</button>
-                    </div>
+                    <input style={{width: '300px'}} type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password}/><br></br>
+                    </div> <br></br>
+                    
+                    
+                    <button className='ui large button' type="submit" >Submit</button>
+                    
                 </form>
             </div>
         )
