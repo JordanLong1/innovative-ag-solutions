@@ -5,7 +5,7 @@ import Navbar from './Navbar'
  const displayCrops = (props) => {
     const cropList = props.crops.map(crop => {
         return (
-            <div className='each crop' key={crop.id} >
+            <div className='ui inverted segment' style={{backgroundColor: 'green'}} key={crop.id} >
                 <li >Name - {crop.name}</li>
                 <li>Description - {crop.description}</li>
                 <li>Acres - {crop.amount_of_acres}</li>
@@ -16,10 +16,13 @@ import Navbar from './Navbar'
         
             <div>
                 <Navbar />
+                <div className='ui inverted relaxed divided list'>
                 <h1>Your Crops</h1>
                     <ul>
                     {cropList}
                     </ul>
+
+                </div>
             </div>
        
     )
