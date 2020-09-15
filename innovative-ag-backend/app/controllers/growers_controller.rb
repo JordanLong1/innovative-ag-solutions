@@ -23,6 +23,6 @@ class GrowersController < UserController
     private 
 
     def grower_params 
-        params.require(:grower).permit(:username, :first_name, :last_name, :email, :password_digest, :type, :bio, :pca_id)
+        params.require(:grower).permit(:username, :first_name, :last_name, :email, :password_digest, :type, :bio, :pca_id, :grower_id)
     end
 end
