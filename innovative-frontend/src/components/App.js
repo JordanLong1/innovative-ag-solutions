@@ -17,6 +17,7 @@ class App extends React.Component {
     componentDidMount() {
         this.props.getCurrentUser()
         this.props.getAllCrops()
+       
     }
 
 
