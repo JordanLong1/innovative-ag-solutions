@@ -26,7 +26,7 @@ class Navbar extends React.Component {
         
         <Link to='/profilehome' className='item'>Home</Link>
         
-        <Link onClick={this.handleClick} to='/' className='item'>Logout</Link>
+        <Link onClick={() => this.props.logOutUser()} to='/' className='item'>Logout</Link>
         
       </div>
       }
