@@ -1,41 +1,41 @@
 import React from 'react' 
 import { connect } from 'react-redux'
-
+import Navbar from './Navbar'
 
 
  const pcasGrowerInfo = (props) => {
      const listCropsAndGrowers = props.growersCrops.map(eachArr => {
         return eachArr.map(objects => {
-            return objects.map(eachObj => {
+            // return console.log(objects)
                 return (
-                    <div key={eachObj.id}> 
-                    {'username' in eachObj ? <h3>Grower Accounts - {eachObj.username}</h3> : null} <br></br>
+                    <div className='ui container' key={objects.id}> 
+                    <div >
+                    {'username' in objects ? <h3 >Grower Accounts - {objects.username}</h3> : null}
+                    </div>
                     <ul>
-               {'name' in eachObj ? <li>Name of crops {eachObj.name}</li> : null } 
-                {'description' in eachObj ?  <li>Crop Description{eachObj.description}</li> : null }
-                {'amount_of_acres' in eachObj ? <li>Acres accounted for - {eachObj.amount_of_acres}</li> : null } 
+               {'name' in objects ? <li>Name of crops {objects.name}</li> : null } 
+                {'description' in objects ?  <li>Crop Description{objects.description}</li> : null }
+                {'amount_of_acres' in objects ? <li>Acres accounted for - {objects.amount_of_acres}</li> : null } 
 
                     </ul>
                     </div>
+                   
                 )
                     
                     
             })
         })
-     })
+
     return (
         <div>
-            <h1> Your Growers and Crops </h1>
-          
-             {listCropsAndGrowers}
-
-            
+            <Navbar />
+            {listCropsAndGrowers}
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    // console.log('state from pcagrowersinfo comp', state.pcaReducer.map(eachArr => eachArr.map(test => console.log('inside of second map',test)))) 
+    console.log(state.pcaReducer)
     return {growersCrops: state.pcaReducer}
 }
 
