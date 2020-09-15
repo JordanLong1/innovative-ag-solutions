@@ -6,7 +6,18 @@ class PcasController < UsersController
     end
 
     def show 
-        pca = Pca.find_by(id: params[:user_id])
+        p = Pca.find_by(id: params[:id])
+        grower_info = p.growers
+       pca = grower_info.each do |grower| 
+             grower.crop_infos.each do |crop| 
+                crop.name 
+                crop.description 
+                crop.amount_of_acres
+                binding.pry
+            end
+        end
+        binding.pry
+        render json: pca
     end
 
     def new 
@@ -26,7 +37,7 @@ class PcasController < UsersController
     private 
 
     def pca_params 
-        params.require(:pca).permit(:username, :first_name, :last_name, :email, :password, :type, :bio, :grower_id, :pca_id)
+        params.require(:pca).permit(:id, :username, :first_name, :last_name, :email, :password, :type, :bio, :grower_id, :pca_id)
 
     end
 end
