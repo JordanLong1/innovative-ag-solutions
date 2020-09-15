@@ -3,6 +3,6 @@ class Pca < User
     has_many :messages
 
    
-     scope :users, -> {where(:type => 'Grower') } 
+    #  scope :users, -> {where(:type => 'Grower') } 
        
 end
