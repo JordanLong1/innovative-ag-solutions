@@ -155,6 +155,7 @@ export const getAllCrops = () => {
 }
 
 export const getPcaToAccessGrowersCrops = (id) => {
+  console.log('id in acion creator', id)
     return (dispatch) => {
         return fetch(`http://localhost:3000/pcas/${id}`, {
             credentials: 'include', 
@@ -164,6 +165,7 @@ export const getPcaToAccessGrowersCrops = (id) => {
         })
         .then(resp => resp.json())
         .then(resp => console.log(resp))
+    
     }
 }
 
