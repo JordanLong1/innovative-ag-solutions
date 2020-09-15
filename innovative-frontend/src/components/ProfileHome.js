@@ -6,7 +6,7 @@ import {getPcaToAccessGrowersCrops} from './actions'
 class ProfileHome extends React.Component {
 
     componentDidMount() {
-        console.log('component did mount', this.props.user)
+      
         if (this.props.user.type === 'Pca') {
             this.props.getPcaToAccessGrowersCrops(this.props.user.id)
         }
