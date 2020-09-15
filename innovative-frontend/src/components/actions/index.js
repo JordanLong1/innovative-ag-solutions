@@ -164,7 +164,10 @@ export const getPcaToAccessGrowersCrops = (id) => {
             }
         })
         .then(resp => resp.json())
-        .then(resp => console.log(resp))
+        // .then(resp => console.log(resp))
+        .then(resp => {
+            dispatch({ type: 'GET_PCAS_GROWERS_CROPS', payload: resp})
+        })
     
     }
 }
