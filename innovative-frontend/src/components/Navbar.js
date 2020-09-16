@@ -22,12 +22,12 @@ class Navbar extends React.Component {
          </div>
       } else {
         return <div className="ui menu">
-        <Link to='/cropsattendedto' className='item'>Crops Attended to</Link>
-        
         <Link to='/profilehome' className='item'>Home</Link>
         
-        <Link onClick={() => this.props.logOutUser()} to='/' className='item'>Logout</Link>
+        <Link to='/cropsattendedto' className='item'>Crops Attended to</Link>
         
+        <Link onClick={() => this.props.logOutUser()} to='/' className='item'>Logout</Link>
+      
       </div>
       }
    }
