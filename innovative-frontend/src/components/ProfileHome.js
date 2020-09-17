@@ -9,7 +9,9 @@ class ProfileHome extends React.Component {
       
         if (this.props.user.type === 'Pca') {
             this.props.getPcaToAccessGrowersCrops(this.props.user.id)
-        }
+        } else if (!this.props.user) {
+            alert('You must create an account or be logged in to get access')
+        } 
     }
 
 
@@ -19,6 +21,7 @@ class ProfileHome extends React.Component {
                 <Navbar />
             <div className='ui container' style={{marginTop: '150px', textAlign: 'center'}}>
                 <div className='welcome user'>
+                    
                 <h4>Welcome {this.props.user.username}</h4><br></br>
                 About me
                 <ul> 
