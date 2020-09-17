@@ -27,25 +27,7 @@ class CropInfosController < ApplicationController
         end
 
     end
-
-    def edit
-        crop_info = CropInfo.find(id: params[:id])
-    end
-
-    def update 
-        crop_info = CropInfo.find_by(id: params[:id])
-        if crop_info
-            crop_info.update(crop_info_params)
-            render json: crop_info 
-        else 
-            render json: {error: "Invalid data please try again"}
-
-        end
-        
-    end
-
-
-
+    
     private 
 
     def crop_info_params
