@@ -2,8 +2,9 @@ import React from 'react'
 import {createUser} from './actions'
 import {getPcas} from './actions'
 import { connect } from 'react-redux'
-
-
+import Input from './Input'
+import Header from './Header'
+import DropDowns from './DropsDowns'
 class SignUp extends React.Component {
 
     state = {
@@ -21,6 +22,7 @@ class SignUp extends React.Component {
         this.setState({
            [event.target.name]: event.target.value
         })
+     
     }
 
     handleSubmit = (event) => {
@@ -46,58 +48,23 @@ class SignUp extends React.Component {
      this.props.getPcas()
     }
     render () {
-
         return (
-
             <div>
-                    <div className="ui segment">
-            <h1 className="ui center aligned header">Welcome to Innovative Ag Solutions!</h1>
-            </div>
+           <Header />
 
             <div className="ui container" style={{marginTop: "150px"}}>
 
             <div className="ui form">
-                <div className="field">
+           
+               <Input divClassName="field" label="username" inputFieldType="text" inputName="userName" inputVal={this.state.userName} onChange={this.handleChange} />
+               <Input divClassName="field" label="First Name" inputFieldType="text" inputName="firstName" inputVal={this.state.firstName} onChange={this.handleChange} />
+               <Input divClassName="field" label="Last name" inputFieldType="text" inputName="lastName" inputVal={this.state.lastName} onChange={this.handleChange} />
+               <Input divClassName="field" label="email" inputFieldType="text" inputName="email" inputVal={this.state.email} onChange={this.handleChange} />
+               <Input divClassName="field" label="Password" inputFieldType="text" inputName="password" inputVal={this.state.password} onChange={this.handleChange} />
+               <Input divClassName="field" label="Bio" inputFieldType="text" inputName="bio" inputVal={this.state.bio} onChange={this.handleChange} />
 
-                <div className="required field">
-                <label className='ui pointing label'>Username</label>
-                 <input type="text" name="userName" onChange={this.handleChange} value={this.state.userName}/>
-                 </div> 
-          
-             <div className="field">
-                  <label className='ui pointing label'>First name</label>
-                  <input type="text" name="firstName" onChange={this.handleChange} value={this.state.firstName}/>
-                     </div>
-                     
-             <div className="field">
-                  <label className='ui pointing label'>Last name</label>
-                <input type="text" name="lastName" onChange={this.handleChange} value={this.state.lastName}/>
-                    </div>
-
-                    <div className="required field">
-                  <label className='ui pointing label'>Email</label>
-                <input type="text" name="email" placeholder="example@example.com" onChange={this.handleChange} value={this.state.email}/>
-                    </div>
-                    
-                    <div className="required field">
-                  <label className='ui pointing label'>Password</label>
-                <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-                    </div>
-
-                    <div className="required field">
-                <label className='ui pointing label'>Bio</label>
-                 <input type="text" name="bio" onChange={this.handleChange} value={this.state.bio}/>
-                 </div>
-
-                    <div className="required field">
-                    <label className='ui pointing label'>Type</label>
-                     <select onChange={this.handleChange} name="type" value={this.state.type}>
-                       <option ></option>
-                       <option name="Pca" value="Pca">PCA</option>
-                       <option  name="Grower" value="Grower">Grower</option>
-                     </select>
-                    </div>
-
+                <DropDowns divClassName="field" label="Type" inputName="type" inputVal={this.state.type} onChange={this.handleChange}/>
+                 
                     <div className='required field'>
                 <label className='ui pointing label'>Growers PCA</label>
                 <select onChange={this.handleChange} name="pcaId" value={this.state.pcaId} >
@@ -115,17 +82,17 @@ class SignUp extends React.Component {
                     </div>
                 </div>
 
-                </div>
-             </div>
-          </div>
+            </div>
+            </div>
+         
+          
        
         )
     }
 }
 
 const mapStateToprops = state => {
-
-    return {pcaList: state.pcaReducer}
+     return {pcaList: state.pcaReducer}
 }
 
 
