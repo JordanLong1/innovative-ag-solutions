@@ -4,7 +4,8 @@ import {getPcas} from './actions'
 import { connect } from 'react-redux'
 import Input from './Input'
 import Header from './Header'
-import DropDowns from './DropsDowns'
+import DropDown from './DropDown'
+import DropDownPcaList from './DropDownPcaList'
 class SignUp extends React.Component {
 
     state = {
@@ -55,27 +56,14 @@ class SignUp extends React.Component {
             <div className="ui container" style={{marginTop: "150px"}}>
 
             <div className="ui form">
-           
                <Input divClassName="field" label="username" inputFieldType="text" inputName="userName" inputVal={this.state.userName} onChange={this.handleChange} />
                <Input divClassName="field" label="First Name" inputFieldType="text" inputName="firstName" inputVal={this.state.firstName} onChange={this.handleChange} />
                <Input divClassName="field" label="Last name" inputFieldType="text" inputName="lastName" inputVal={this.state.lastName} onChange={this.handleChange} />
                <Input divClassName="field" label="email" inputFieldType="text" inputName="email" inputVal={this.state.email} onChange={this.handleChange} />
-               <Input divClassName="field" label="Password" inputFieldType="text" inputName="password" inputVal={this.state.password} onChange={this.handleChange} />
+               <Input divClassName="field" label="Password" inputFieldType="password" inputName="password" inputVal={this.state.password} onChange={this.handleChange} />
                <Input divClassName="field" label="Bio" inputFieldType="text" inputName="bio" inputVal={this.state.bio} onChange={this.handleChange} />
-
-                <DropDowns divClassName="field" label="Type" inputName="type" inputVal={this.state.type} onChange={this.handleChange}/>
-                 
-                    <div className='required field'>
-                <label className='ui pointing label'>Growers PCA</label>
-                <select onChange={this.handleChange} name="pcaId" value={this.state.pcaId} >
-                    <option></option>
-                {this.props.pcaList.map(eachPca => {
-                   return eachPca.map(pca => <option name='pcaId' value={pca.id} key={pca.id}>{pca.username}</option>)
-                })}
-                   
-                </select>
-                    </div> 
-                    
+                <DropDown divClassName="field" label="Type" inputName="type" inputVal={this.state.type} onChange={this.handleChange}/>
+                <DropDownPcaList divClassName="field" label="Growers Pca" inputName="pcaId" inputVal={this.state.pcaId} onChange={this.handleChange}> </DropDownPcaList>
                     <div className="ui basic button">
                         
                         <button onClick={this.handleSubmit} style={{width: '1100px', height: '30px'}} >Sign me up!</button>
@@ -84,18 +72,9 @@ class SignUp extends React.Component {
 
             </div>
             </div>
-         
-          
-       
         )
     }
 }
 
-const mapStateToprops = state => {
-     return {pcaList: state.pcaReducer}
-}
 
-
-
-
-export default connect(mapStateToprops, {createUser, getPcas} )(SignUp)
+export default connect(null, { createUser, getPcas} )(SignUp)
