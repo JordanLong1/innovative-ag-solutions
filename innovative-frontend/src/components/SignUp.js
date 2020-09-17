@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {createUser} from './actions'
 import {getPcas} from './actions'
 import { connect } from 'react-redux'
@@ -43,9 +42,8 @@ class SignUp extends React.Component {
     }
 
     componentDidMount() {
-       
+
      this.props.getPcas()
-     
     }
     render () {
 
@@ -60,7 +58,6 @@ class SignUp extends React.Component {
 
             <div className="ui form">
                 <div className="field">
-
 
                 <div className="required field">
                 <label className='ui pointing label'>Username</label>
@@ -118,9 +115,9 @@ class SignUp extends React.Component {
                     </div>
                 </div>
 
-            </div>
-            </div>
-            </div>
+                </div>
+             </div>
+          </div>
        
         )
     }

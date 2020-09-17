@@ -13,10 +13,9 @@ import Navbar from './Navbar'
                     <div key={objects.id}> <br></br>
                    
                     {'username' in objects ? <h3 style={{position: 'relative', bottom: '175px'}}>Grower Accounts - {objects.username}</h3> : null}
-               {'name' in objects ? <li style={{position: 'relative', top: '200px'}}>Name of crops - {objects.name}</li> : null } 
-                {'description' in objects ?  <li style={{position: 'relative', top: '200px'}}>Crop Description - {objects.description}</li> : null }
-                {'amount_of_acres' in objects ? <li style={{position: 'relative', top: '200px'}}>Acres accounted for - {objects.amount_of_acres}</li> : null } 
-
+                       {'name' in objects ? <li style={{position: 'relative', top: '200px'}}>Name of crops - {objects.name}</li> : null } 
+                        {'description' in objects ?  <li style={{position: 'relative', top: '200px'}}>Crop Description - {objects.description}</li> : null }
+                          {'amount_of_acres' in objects ? <li style={{position: 'relative', top: '200px'}}>Acres accounted for - {objects.amount_of_acres}</li> : null } 
                     </div>  
                 )      
             })
@@ -36,7 +35,7 @@ import Navbar from './Navbar'
 }
 
 const mapStateToProps = state => {
-    console.log(state.pcaReducer)
+   
     return {growersCrops: state.pcaReducer}
 }
 

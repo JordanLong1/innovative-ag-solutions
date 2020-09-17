@@ -27,18 +27,16 @@ class ProfileHome extends React.Component {
                      <li>Bio: {this.props.user.bio}</li>
                     <li>User type: {this.props.user.type}</li>
                     
-                </ul>
+                    </ul>
                 </div>
-
-            </div>
-              
-            </div>
+            </div>   
+         </div>
         )
     }
 }
 
 const mapStateToProps = state => {
-   
+
     return {user: state.userReducers}
 }
 

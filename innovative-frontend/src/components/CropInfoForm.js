@@ -57,8 +57,8 @@ class CropInfoForm extends React.Component {
                     </div> <br></br><br></br>
                     <button style={{width: '650px'}} className='ui large button'>Submit</button>
                 </form>
-            </div>
-            </div>
+             </div>
+         </div>
         )
     }
 }

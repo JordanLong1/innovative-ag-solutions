@@ -5,9 +5,6 @@ class Login extends React.Component {
 
     state = {email: "", password: ""}
 
-    
-
-    
     handleSubmit = (event) => {
         event.preventDefault()
 
@@ -52,8 +49,8 @@ class Login extends React.Component {
                     <button className='ui large button' type="submit" >Submit</button>
                     
                 </form>
-                </div>
             </div>
+         </div>
         )
     }
 }
