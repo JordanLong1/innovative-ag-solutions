@@ -9,7 +9,7 @@ class PcasController < UsersController
         p = Pca.find_by(id: params[:id])
        
         if p.growers.count == 0 
-            binding.pry
+          
             render json: {error: "will this work?"}
             
         else  
