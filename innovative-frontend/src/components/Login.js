@@ -1,6 +1,8 @@
 import React from 'react'
 import {handleLogin} from './actions'
 import { connect } from 'react-redux'
+import Input from './Input'
+
 class Login extends React.Component {
 
     state = {email: "", password: ""}
@@ -35,18 +37,12 @@ class Login extends React.Component {
               
                 <h1>Log-In below</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <div className='ui input'>
-                    <label className='ui pointing label'>Email</label>
-                    <input style={{width: '300px'}} type="text" name="email" placeholder="Enter email" onChange={this.handleChange} value={this.state.email}/> <br></br>
-                    </div> <br></br>
-                    <div className='ui input'>
-
-                    <label className='ui pointing label'>Password</label>
-                    <input style={{width: '300px'}} type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password}/><br></br>
-                    </div> <br></br><br></br>
-                    
-                    
+                    <div style={{width: '300px'}}>
+                      <Input divClassName="field" label="Email" inputFieldType="text" inputName="email" inputVal={this.state.email} onChange={this.handleChange} />
+                      <Input divClassName="field" label="Password" inputFieldType="password" inputName="password" inputVal={this.state.password} onChange={this.handleChange} /><br></br>
                     <button className='ui large button' type="submit" >Submit</button>
+
+                    </div>
                     
                 </form>
             </div>
