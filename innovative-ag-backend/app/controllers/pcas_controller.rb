@@ -7,16 +7,23 @@ class PcasController < UsersController
 
     def show 
         p = Pca.find_by(id: params[:id])
-        grower_info = p.growers
-       crop = grower_info.map do |grower| 
-             grower.crop_infos.map do |crop| 
-                crop
-            end
-        end
-        pca = crop << grower_info
        
-        render json: pca
-    end
+        if p.growers.count == 0 
+            binding.pry
+            render json: {error: "will this work?"}
+            
+        else  
+            grower_info = p.growers
+           crop = grower_info.map do |grower| 
+                 grower.crop_infos.map do |crop| 
+                    crop
+                end
+            end
+            pca = crop << grower_info
+            render json: pca
+        end
+
+        end
 
     def new 
         pca = Pca.new(pca_params)
