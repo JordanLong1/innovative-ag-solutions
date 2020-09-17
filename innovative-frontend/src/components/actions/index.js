@@ -27,7 +27,6 @@ export const createUser = (newUser, callback) => {
 
         })
         .then(resp => resp.json())
-        .then(resp => console.log('create new user resp', resp))
         .then(resp => {
             dispatch({ type: 'LOGIN_USER', user: resp})
             callback()
@@ -89,7 +88,7 @@ export const handleLogin = (userInfo, callback) => {
         .then(resp => {
             if (!resp.error) {
                 dispatch({ type: 'LOGIN_USER', user: resp})
-                callback()
+                return callback()
             } else {
                 alert('There was an error logging in, please try again')
             }
@@ -164,7 +163,12 @@ export const getPcaToAccessGrowersCrops = (id) => {
         })
         .then(resp => resp.json())
         .then(resp => {
-            dispatch({ type: 'GET_PCAS_GROWERS_CROPS', payload: resp})
+            if (!resp.error) {
+                dispatch({ type: 'GET_PCAS_GROWERS_CROPS', payload: resp})
+
+            } else {
+                alert('You need your growers to sign up and add some crops')
+            }
         })
     
     }
