@@ -3,7 +3,7 @@ import React from 'react'
 import {createUser} from './actions'
 import {getPcas} from './actions'
 import { connect } from 'react-redux'
-// import pcasReducer from './reducers/pcasReducer'
+
 
 class SignUp extends React.Component {
 
@@ -43,7 +43,7 @@ class SignUp extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props)
+       
      this.props.getPcas()
      
     }
@@ -127,7 +127,7 @@ class SignUp extends React.Component {
 }
 
 const mapStateToprops = state => {
-//    console.log(state.pcaReducer)
+
     return {pcaList: state.pcaReducer}
 }
 

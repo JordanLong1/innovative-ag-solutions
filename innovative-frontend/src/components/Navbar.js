@@ -47,11 +47,10 @@ class Navbar extends React.Component {
     }
 }
 
-// need acess to redux so you can find out what user is logged in mapStateToProps, pull user object in from store write  ahelper function
-// check and see if this.props.user.type === grower || pca 
+
 
 const mapStateToProps = state => {
-  // console.log(state.userReducers.user)
+
   return {user: state.userReducers}
 }
 

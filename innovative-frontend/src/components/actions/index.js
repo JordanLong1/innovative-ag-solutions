@@ -31,13 +31,11 @@ export const createUser = (newUser, callback) => {
             dispatch({ type: 'LOGIN_USER', user: resp})
             callback()
         })
-        //.then(resp => {
-
-         //})   
+      
     }
 }
 
-export const getPcas = () => { // need to fetch here to put all salesmen into a dropdown for a grower to sign up
+export const getPcas = () => { 
     
     return(dispatch) => {
         return fetch('http://localhost:3000/pcas')
@@ -49,7 +47,7 @@ export const getPcas = () => { // need to fetch here to put all salesmen into a 
     }
 }
 
-export const getCurrentUser = () => { // add conditional for errors
+export const getCurrentUser = () => { 
     return(dispatch) => {
         return fetch('http://localhost:3000/get_current_user', {
             credentials: "include", 
@@ -137,7 +135,6 @@ export const createCropInfo = (newCrop, callback) => {
     }
 }
 
-// fetch the index action of crops
 export const getAllCrops = () => {
     return (dispatch) => {
         return fetch('http://localhost:3000/crop_infos', {
