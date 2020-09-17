@@ -4,8 +4,8 @@ class User < ApplicationRecord
     # has_many :messages
     has_secure_password
 
-    # validates :username, :email, uniqueness: true
-    # validates :username, :first_name, :last_name, :email, :password_digest, :type, :bio, presence: true
+    validates :username, :email, uniqueness: true
+    validates :username, :first_name, :last_name, :email, :password_digest, :type, :bio, presence: true
 
 
     def user_serializer
