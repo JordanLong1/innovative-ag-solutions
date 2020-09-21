@@ -53,7 +53,7 @@ class SignUp extends React.Component {
             <div>
            <Header />
 
-            <div className="ui container" style={{marginTop: "150px"}}>
+            <div className="ui container" style={{marginTop: "75px", paddingBottom: '100px'}}>
 
             <div className="ui form">
                <Input divClassName="field" label="username" inputFieldType="text" inputName="userName" inputVal={this.state.userName} onChange={this.handleChange} />
