@@ -33,7 +33,7 @@ class Login extends React.Component {
             <div className="ui segment">
             <h1 className="ui center aligned header">Welcome to Innovative Ag Solutions!</h1>
             </div>
-            <div className='ui container' style={{width: '500px', marginTop: '150px'}}>
+            <div className='ui container' style={{width: '500px', marginTop: '150px', fontSize: '25px'}}>
               
                 <h1>Log-In below</h1>
                 <form onSubmit={this.handleSubmit}>
