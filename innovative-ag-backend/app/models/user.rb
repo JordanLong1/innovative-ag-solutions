@@ -1,7 +1,5 @@
 class User < ApplicationRecord
     
-
-    # has_many :messages
     has_secure_password
 
     validates :username, :email, uniqueness: true
