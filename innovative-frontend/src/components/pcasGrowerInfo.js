@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 const cropList = (cropsArr) => {
    return cropsArr.map(crop => {
       return (
-     <li>
+     <li style={{listStyle: 'none'}} key={crop.id}>
         Name of Crop - {crop.name}<br></br>
          Description - {crop.description}<br></br>
          Acres - {crop.amount_of_acres}
@@ -17,9 +17,9 @@ const cropList = (cropsArr) => {
 const pcasGrowerInfo = (props) => {
     const listCropsAndGrowers = props.growersCrops.map(objects => {
         return (
-            <div key={objects.id}>
+            <div key={objects.grower_info.id}>
                 <h3>Grower Account - {objects.grower_info.username}</h3>
-                <ul key={objects.id}>
+                <ul>
                 {cropList(objects.crops)}
             
                  </ul>
