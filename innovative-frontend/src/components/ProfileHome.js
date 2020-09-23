@@ -24,11 +24,14 @@ class ProfileHome extends React.Component {
                     
                 <h4>Welcome {this.props.user.username}</h4><br></br>
                 About me
-                <ul> 
-                    <li>Name: {`${this.props.user.first_name} ${this.props.user.last_name}`}</li>
-                     <li>Email: {this.props.user.email}</li>
-                     <li>Bio: {this.props.user.bio}</li>
-                    <li>User type: {this.props.user.type}</li>
+                <ul>
+                    <li style={{listStyle: 'none'}}>
+                        Name - {this.props.user.first_name} {this.props.user.last_name}<br></br>
+                        Email - {this.props.user.email}<br></br>
+                        Bio - {this.props.user.bio}<br></br>
+                        Type - {this.props.user.type}
+
+                    </li>
                     
                     </ul>
                 </div>
