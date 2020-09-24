@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {logOutUser} from './actions'
-import {Redirect, Route } from 'react-router-dom'
+// import {Redirect, Route } from 'react-router-dom'
 class Navbar extends React.Component {
 
 
@@ -29,15 +29,7 @@ class Navbar extends React.Component {
         <Link onClick={() => this.props.logOutUser()} to='/' className='item'>Logout</Link>
       
       </div>
-      } else {
-        alert('You need to be logged in to access this')
-        return (
-
-        <Route >
-          <Redirect to='/'/>
-        </Route>
-        )
-      }
+      } 
    }
 
     render () {
