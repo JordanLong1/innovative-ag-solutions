@@ -2,24 +2,24 @@ import React from 'react'
 import Navbar from './Navbar'
 import { connect } from 'react-redux'
 import {getPcaToAccessGrowersCrops} from './actions'
-import {Redirect, Route } from 'react-router-dom'
+// import {Redirect, Route } from 'react-router-dom'
 
 class ProfileHome extends React.Component {
 
     componentDidMount() {
       
         if (this.props.user.type === 'Pca') {
+            console.log(!this.props.user)
             this.props.getPcaToAccessGrowersCrops(this.props.user.id)
-        } else if (!this.props.user.username) {
-            console.log(this.props.user)
+        } else if (!this.props.user) {
             alert('You must create an account or be logged in to get access')
            
-            return (
-                <Route >
-                  <Redirect to='/'/>
-                </Route>
+            // return (
+            //     <Route >
+            //       <Redirect to='/'/>
+            //     </Route>
 
-            )
+            // )
                 
             
         } 
