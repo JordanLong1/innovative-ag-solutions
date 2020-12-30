@@ -78,6 +78,7 @@ GEM
       warden (~> 1.2.3)
     erubi (1.9.0)
     ffi (1.13.1)
+    foreman (0.87.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.5)
@@ -176,6 +177,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
+  foreman
   jwt
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

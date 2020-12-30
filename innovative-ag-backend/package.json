@@ -1,0 +1,17 @@
+{
+  "name": "innovative-ag-backend",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd .. && cd innovative-frontend && npm install && npm run build && cd ..", 
+    "deploy": "cp -a innovative-frontend/build/.public", 
+    "postinstall": "npm run build && npm run deploy && echo 'Client Built'"
+  },
+  "author": "",
+  "license": "ISC"
+}
