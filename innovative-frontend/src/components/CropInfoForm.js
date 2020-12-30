@@ -45,17 +45,17 @@ class CropInfoForm extends React.Component {
                 <form onSubmit={this.handleSubmit} >
                     <div className='ui input focus'>
                     <label className='ui pointing label'>Name of crop:</label>
-                    <input style={{ width: '500px'}} type='text' name="name" placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/> 
+                    <input type='text' name="name" placeholder='Please enter the name of crop' onChange={this.handleChange} value={this.state.name}/> 
                     </div> <br></br><br></br>
                     <div className='ui input focus'>
                     <label className='ui pointing label'>Brief Description:</label>
-                    <textarea style={{ width: '490px'}} type='text' name="description" placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/> 
+                    <textarea type='text' name="description" placeholder='Enter a description of the crop' onChange={this.handleChange} value={this.state.description}/> 
                     </div> <br></br><br></br>
                     <div className='ui input focus'>
                     <label className='ui pointing label'>Acres</label>
-                    <input style={{ width: '580px'}} type='text' name="amountOfAcres" placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} /> 
+                    <input type='text' name="amountOfAcres" placeholder='Acres:' onChange={this.handleChange} value={this.state.amountOfAcres} /> 
                     </div> <br></br><br></br>
-                    <button style={{width: '650px'}} className='ui large button'>Submit</button>
+                    <button className='ui large button'>Submit</button>
                 </form>
              </div>
          </div>

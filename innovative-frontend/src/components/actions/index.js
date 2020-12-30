@@ -41,7 +41,6 @@ export const getPcas = () => {
         return fetch('http://localhost:3000/pcas')
         .then(resp => resp.json()) 
         .then(resp => {
-            // console.log(resp)
             dispatch({ type: 'GET_PCAS', pcas: resp})
         })
     }

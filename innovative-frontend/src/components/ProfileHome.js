@@ -13,15 +13,7 @@ class ProfileHome extends React.Component {
             this.props.getPcaToAccessGrowersCrops(this.props.user.id)
         } else if (!this.props.user) {
             alert('You must create an account or be logged in to get access')
-           
-            // return (
-            //     <Route >
-            //       <Redirect to='/'/>
-            //     </Route>
 
-            // )
-                
-            
         } 
     }
 

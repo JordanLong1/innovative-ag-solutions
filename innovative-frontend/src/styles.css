@@ -1,0 +1,17 @@
+
+/* .growers-names {
+    position: relative;
+    bottom: 300px;
+    text-align: center;
+} */
+
+.crop-info-container li {
+    position: relative;
+    top: 250px
+}
+
+.test-div h3 {
+    position: relative;
+    bottom: 300px;
+    text-align: center;
+}

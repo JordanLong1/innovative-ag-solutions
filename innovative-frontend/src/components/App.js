@@ -36,7 +36,6 @@ class App extends React.Component {
             </div>
         )
     };
-
 };
      
         export default connect(null, {getCurrentUser, getAllCrops })(App);

@@ -66,7 +66,7 @@ class SignUp extends React.Component {
                 <DropDownPcaList divClassName="field" label="Growers Pca" inputName="pcaId" inputVal={this.state.pcaId} onChange={this.handleChange}> </DropDownPcaList>
                     <div className="ui basic button">
                         
-                        <button onClick={this.handleSubmit} style={{width: '1100px', height: '30px'}} >Sign me up!</button>
+                        <button onClick={this.handleSubmit}  >Sign me up!</button>
                     </div>
                 </div>
 
